@@ -1,3 +1,4 @@
 img/*
 vm-img/*
 cloud-init/meta-data
+cloud-init/seed.img
