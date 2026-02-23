@@ -1,2 +1,3 @@
 img/*
 vm-img/*
+cloud-init/meta-data

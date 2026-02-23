@@ -14,5 +14,9 @@ mounts:
 
 runcmd:
 - sudo apt install -y make autoconf automake libtool pkg-config gnutls-dev linux-headers-$(uname -r)
+- echo 'udp_tunnel' | sudo tee -a /etc/modules-load.d/quic.conf
+- echo 'ip6_udp_tunnel' | sudo tee -a /etc/modules-load.d/quic.conf
+- sudo systemctl restart systemd-modules-load.service
+- /quic/quickbuild.sh
 
 
