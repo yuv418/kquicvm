@@ -1,0 +1,18 @@
+#cloud-config
+password: "password"
+ssh_pwauth: true
+
+users:
+- name: testuser
+  shell: /bin/bash
+  lock_passwd: false
+  sudo: ALL=(ALL) NOPASSWD:ALL
+  plain_text_passwd: "password"
+
+mounts:
+- ["quicshare", "/quic", "9p", "trans=virtio,version=9p2000.L", "0", "0"]
+
+runcmd:
+- sudo apt install -y make autoconf automake libtool pkg-config gnutls-dev linux-headers-$(uname -r)
+
+
